@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">GD8_E_9590</string>
+    <string name="show_list_user">Show List User</string>
+    <string name="create_user">Create User</string>
+    <string name="selamat_datanf_di_guided_modul_8_web_api_retrofit">Selamat datanf di Guided Modul 8 Web API Retrofit</string>
+    <string name="guided_web_api">GUIDED WEB API</string>
+    <string name="nama">Nama</string>
+    <string name="nim">NIM</string>
+    <string name="prodi">Prodi</string>
+    <string name="fakultas">Fakultas</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="laki_laki">Laki Laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="password">Password</string>
+    <string name="cancel">CANCEL</string>
+    <string name="create">CREATE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="detail_user">Detail User</string>
+    <string name="edit">EDIT</string>
+    <string name="delete">DELETE</string>
+</resources>
