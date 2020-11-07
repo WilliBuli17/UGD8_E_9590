@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,6 @@ public class DetailUserFragment extends DialogFragment {
     private String sIdUser, sNama, sNim, sFakultas, sProdi, sJenisKelamin;
     private ImageButton ibClose;
     private ProgressDialog progressDialog;
-
 
     private MaterialButton btnEdit, btnDelete;
 
@@ -92,6 +92,17 @@ public class DetailUserFragment extends DialogFragment {
                 });
 
                 alertDialog.show();
+            }
+        });
+
+        btnEdit = v.findViewById(R.id.btnEdit);
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), EditUserActivity.class);
+                i.putExtra("id", sIdUser);
+                startActivity(i);
+                dismiss();
             }
         });
 

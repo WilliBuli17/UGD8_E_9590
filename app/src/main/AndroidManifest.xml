@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gd8_e_9590">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GD8_E_9590">
-        <activity android:name=".CRUD.ShowListUserActivity"></activity>
+        <activity android:name=".CRUD.EditUserActivity"></activity>
+        <activity android:name=".CRUD.ShowListUserActivity" />
         <activity android:name=".CRUD.CreateUserActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

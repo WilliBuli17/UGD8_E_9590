@@ -19,4 +19,6 @@
     <string name="detail_user">Detail User</string>
     <string name="edit">EDIT</string>
     <string name="delete">DELETE</string>
+    <string name="update_user">Update User</string>
+    <string name="edit_user">Edit User</string>
 </resources>
