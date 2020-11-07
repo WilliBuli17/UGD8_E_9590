@@ -21,4 +21,7 @@
     <string name="delete">DELETE</string>
     <string name="update_user">Update User</string>
     <string name="edit_user">Edit User</string>
+    <string name="login">Login</string>
+    <string name="my_profile">My Profile</string>
+    <string name="logout">Logout</string>
 </resources>

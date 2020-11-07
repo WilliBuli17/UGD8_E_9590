@@ -18,6 +18,7 @@ import com.example.gd8_e_9590.API.ApiInterface;
 import com.example.gd8_e_9590.MODEL.UserDAO;
 import com.example.gd8_e_9590.MODEL.UserResponse;
 import com.example.gd8_e_9590.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class ShowListUserActivity extends AppCompatActivity {
     private List<UserDAO> user = new ArrayList<>();
     private SearchView searchView;
     private SwipeRefreshLayout swipeRefresh;
+    private ShimmerFrameLayout shimmerFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +52,14 @@ public class ShowListUserActivity extends AppCompatActivity {
         searchView = findViewById(R.id.searchUser);
         swipeRefresh = findViewById(R.id.swipeRefresh);
 
+        shimmerFrameLayout = findViewById(R.id.shimmerLayout);
+        shimmerFrameLayout.startShimmer();
         swipeRefresh.setRefreshing(true);
         loadUser();
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                shimmerFrameLayout.startShimmer();
                 loadUser();
             }
         });
@@ -67,6 +72,8 @@ public class ShowListUserActivity extends AppCompatActivity {
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.GONE);
                 generateDataList(response.body().getUsers());
                 swipeRefresh.setRefreshing(false);
             }
@@ -75,6 +82,8 @@ public class ShowListUserActivity extends AppCompatActivity {
             public void onFailure(Call<UserResponse> call, Throwable t) {
                 Toast.makeText(ShowListUserActivity.this, "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
                 swipeRefresh.setRefreshing(false);
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.GONE);
             }
         });
     }

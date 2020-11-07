@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GD8_E_9590">
-        <activity android:name=".CRUD.EditUserActivity"></activity>
+        <activity android:name=".LoginLogout.LogoutAndProfilActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CRUD.EditUserActivity" />
         <activity android:name=".CRUD.ShowListUserActivity" />
         <activity android:name=".CRUD.CreateUserActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginLogout.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

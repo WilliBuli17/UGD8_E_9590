@@ -2,6 +2,7 @@ package com.example.gd8_e_9590.CRUD;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -155,8 +156,8 @@ public class EditUserActivity extends AppCompatActivity {
 
                 etNama.setText(sNama);
                 etNim.setText(sNim);
-                exposedDropdownFakultas.setText(sFakultas);
-                exposedDropdownProdi.setText(sProdi);
+                exposedDropdownFakultas.setText(sFakultas,false);
+                exposedDropdownProdi.setText(sProdi,false);
                 if(sJenisKelamin.equalsIgnoreCase("Perempuan")) {
                     rbFemale.setChecked(true);
                     rbMale.setChecked(false);
@@ -184,9 +185,10 @@ public class EditUserActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 Toast.makeText(EditUserActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(EditUserActivity.this, ShowListUserActivity.class);
-                startActivity(intent);
                 progressDialog.dismiss();
+                Intent intent = new Intent();
+                setResult(Activity.RESULT_OK, intent);
+                finish();
             }
 
             @Override
