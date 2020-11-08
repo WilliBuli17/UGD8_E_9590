@@ -33,6 +33,9 @@ public class LogoutAndProfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout_and_profil);
 
+        sIdUser = getIntent().getStringExtra("id");
+        loadUserById(sIdUser);
+
         progressDialog = new ProgressDialog(this);
         progressDialog.show();
 
@@ -61,14 +64,11 @@ public class LogoutAndProfilActivity extends AppCompatActivity {
                 editor.putString("id", "");
                 editor.apply();
 
-                Intent i = new Intent(LogoutAndProfilActivity.this, LoginActivity.class);
-                startActivity(i);
+                Intent intent = new Intent(LogoutAndProfilActivity.this, LoginActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
-
-        sIdUser = getIntent().getStringExtra("id");
-        loadUserById(sIdUser);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
