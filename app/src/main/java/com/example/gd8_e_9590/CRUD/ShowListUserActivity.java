@@ -72,10 +72,10 @@ public class ShowListUserActivity extends AppCompatActivity {
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                shimmerFrameLayout.stopShimmer();
-                shimmerFrameLayout.setVisibility(View.GONE);
                 generateDataList(response.body().getUsers());
+                shimmerFrameLayout.stopShimmer();
                 swipeRefresh.setRefreshing(false);
+                shimmerFrameLayout.setVisibility(View.GONE);
             }
 
             @Override
